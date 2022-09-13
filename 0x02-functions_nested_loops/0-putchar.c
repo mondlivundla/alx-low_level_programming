@@ -19,7 +19,3 @@ int main(void)
 
 	return (0);
 }
-/**
- * Auth: Mondliwethu Vundla
- * Date: 13 September 2022
- */
