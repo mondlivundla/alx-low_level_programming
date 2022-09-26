@@ -3,11 +3,10 @@
 
 /**
  * File: main.h
- * Auth: sam tech (samuel birhanu)
+ * Auth: Mondliwethu Vundla
  * description: Header file containing prototypes for all functions
  *       used in the 0x06-pointers_arrays_strings directory.
  */
-
 #include <stddef.h>
 
 int _putchar(char c);
