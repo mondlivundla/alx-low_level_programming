@@ -1,40 +1,32 @@
-#include "main.h"
+/**
+ * _strstr - searches a string for a substring
+ *
+ * @haystack: string to search
+ * @needle: sub string to search for
+ *
+ * Return: pointer to byte at start of substring, or
+ * NULL if substring not found
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	char *hayptr, *ndlptr;
 
-
-/**                                                                                                                                
- * _strstr - Locates a substring.                                                                                                  
- * @haystack: The string to be searched.                                                                                           
- * @needle: The substring to be located.                                                                                           
- *                                                                                                                                 
- * Return: If the substring is located - a pointer to the beginning                                                                
- *                                       of the located substring.                                                                 
- *         If the substring is not located - NULL.                                                                                 
- */                                                                                                                                
-                                                                                                                               	
-char *_strstr(char *haystack, char *needle)                                                                                        
-{                                                                                                                                  
-        int index;                                                                                                                 
-                                                                                                                                   
-        if (*needle == 0)                                                                                                          
-                return (haystack);                                                                                                 
-                                                                                                                                   
-        while (*haystack)                                                                                                          
-        {                                                                                                                          
-                index = 0;                                                                                                         
-                                                                                                                                   
-                if (haystack[index] == needle[index])                                                                              
-                {                                                                                                                  
-                        do {                                                                                                       
-                                if (needle[index + 1] == '\0')                                                                     
-                                        return (haystack);                                                                         
-                                                                                                                                   
-                                index++;                                                                                           
-                                                                                                                                   
-                        } while (haystack[index] == needle[index]);                                                                
-                }                                                                                                                  
-                                                                                                                                   
-                haystack++;                                                                                                        
-        }                                                                                                                          
-                                                                                                                                   
-        return ('\0');                                                                                                             
+	while (*haystack != 0)
+	{
+		hayptr = haystack;
+		ndlptr = needle;
+		if (*ndlptr == 0)
+			return (haystack);
+		while (*hayptr != 0)
+		{
+			if (*hayptr != *ndlptr)
+				break;
+			hayptr++;
+			ndlptr++;
+			if (*ndlptr == 0)
+				return (haystack);
+		}
+		haystack++;
+	}
+	return (0);
 }
