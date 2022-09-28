@@ -12,3 +12,19 @@ int _sqrt_recursion(int n)
 		return (n);
 	return (_sqrt(0, n));
 }
+
+/**
+ * _sqrt -> returns square root of a number
+ * @n: testing number
+ * @x: squared number
+ * Return: square root of @n
+ */
+
+int _sqrt(int n, int x)
+{
+	if (n > x / 2)
+		return (-1);
+	else if (n * n == x)
+		return (n);
+	return (_sqrt(n + 1, x));
+}
