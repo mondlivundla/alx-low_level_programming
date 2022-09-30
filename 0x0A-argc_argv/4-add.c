@@ -17,10 +17,10 @@ int check_num(char *str)
 unsigned int count;
 
 count = 0;
-while (count < strlen(str)) /*count string*/
+while (count < strlen(str))/*count string*/
 
 {
-if (!isdigit(str[count])) /*check if str there are digit*/
+if (!isdigit(str[count]))/*check if str there are digit*/
 {
 return (0);
 }
@@ -55,4 +55,19 @@ if (check_num(argv[count]))
 {
 str_to_int = atoi(argv[count]); /*ATOI --> convert string to int*/
 sum += str_to_int;
+}
+
+/*Condition if one of the number contains symbols that are not digits*/
+else
+{
+printf("Error\n");
+return (1);
+}
+
+count++;
+}
+
+printf("%d\n", sum);/*print sum*/
+
+return (0);
 }
