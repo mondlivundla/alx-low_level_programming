@@ -6,10 +6,10 @@
  *
  * Return: no return.
  */
-void free_listp2(listint_t **head)
+void free_listp2(listp_t **head)
 {
-	listint_t *temp;
-	listint_t *curr;
+	listp_t *temp;
+	listp_t *curr;
 
 	if (head != NULL)
 	{
@@ -32,13 +32,13 @@ void free_listp2(listint_t **head)
 size_t free_listint_safe(listint_t **h)
 {
 	size_t nnodes = 0;
-	listint_t *hptr, *new, *add;
+	listp_t *hptr, *new, *add;
 	listint_t *curr;
 
 	hptr = NULL;
 	while (*h != NULL)
 	{
-		new = malloc(sizeof(listint_t));
+		new = malloc(sizeof(listp_t));
 
 		if (new == NULL)
 			exit(98);
@@ -55,7 +55,7 @@ size_t free_listint_safe(listint_t **h)
 			if (*h == add->p)
 			{
 				*h = NULL;
-				free_listint_t(&hptr);
+				free_listp2(&hptr);
 				return (nnodes);
 			}
 		}
@@ -67,6 +67,6 @@ size_t free_listint_safe(listint_t **h)
 	}
 
 	*h = NULL;
-	free_listint_t(&hptr);
+	free_listp2(&hptr);
 	return (nnodes);
 }
